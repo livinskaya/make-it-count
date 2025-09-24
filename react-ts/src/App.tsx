@@ -1,36 +1,43 @@
 import './App.css'
+import { HeartIcon } from './HeartIcon'
+import { useState } from 'react'
 
-function Button() {
-  return (
-    <button className='bg-slate-50 rounded-4xl  hover:bg-slate-100 focus:outline-2 focus:outline-offset-1 focus: outline-blue-200 h-11 w-11 relative top-7 left-64' ></button>
-  )
-}
+
 
 function Thumbnail() {
   return (
-    <div className='pt-15 pl-25 rounded-md bg-blue-400 relative top-5 left-3'>
+    <div className='h-15 w-25 rounded-md bg-blue-400'>
 
     </div>
   )
 }
 
 
+
+
 function App() {
+
+  const [fillheart, setFillheart] = useState(false);
+
+  function switchHeart() {
+    setFillheart(!fillheart);
+  }
 
   return (
     <>
-      <div className="flex items-center h-screen justify-center gap-3 bg-blue-200 flex-col">
-        <h1 className="mb-5 font-semibold text-4xl absolute top-80">Styling</h1>
-        <div className="bg-white rounded-2xl w-120 h-25">
-          <div className="flex flex-row">
-            <Thumbnail />
-            <div className="relative left-8 top-4">
-              <h2>Video Title</h2>
-              <p className="text-2xl">Video Description</p>
-            </div>
+      <div className="flex items-center h-screen justify-center bg-blue-200 flex-col">
+        <h1 className="mb-5 font-semibold text-4xl">Styling</h1>
+        <div className="bg-white p-5 rounded-2xl w-120 flex flex-row items-center">
 
-            <Button />
+          <Thumbnail />
+          <div className="pl-2 flex-1">
+            <h2 className="text-2xl">Video Title</h2>
+            <p>Video Description</p>
           </div>
+          <div onClick={switchHeart} className={fillheart ? 'text-red-400' : 'text-transparent'}>
+            <HeartIcon />
+          </div>
+
         </div>
       </div>
     </>
