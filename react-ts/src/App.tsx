@@ -2,7 +2,7 @@ import './App.css'
 
 function Button() {
   return (
-    <button className='bg-red-500 rounded-md  hover:bg-amber-200 focus:outline-2 focus:outline-offset-1 focus: outline-amber-500'></button>
+    <button className='bg-slate-50 rounded-4xl  hover:bg-slate-100 focus:outline-2 focus:outline-offset-1 focus: outline-blue-200 h-11 w-11 relative top-7 left-64' ></button>
   )
 }
 
@@ -24,7 +24,11 @@ function App() {
         <div className="bg-white rounded-2xl w-120 h-25">
           <div className="flex flex-row">
             <Thumbnail />
-            <h2></h2>
+            <div className="relative left-8 top-4">
+              <h2>Video Title</h2>
+              <p className="text-2xl">Video Description</p>
+            </div>
+
             <Button />
           </div>
         </div>
