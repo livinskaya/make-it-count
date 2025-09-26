@@ -1,3 +1,9 @@
+@font-face {
+  font-family: Minecraft;
+  src: url("../src/assets/fonts/Minecraft.ttf");
+}
 @import "tailwindcss";
 
-
+@theme {
+  --font-minecraft: Minecraft;
+}
