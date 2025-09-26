@@ -15,10 +15,11 @@
   // "postCreateCommand": "yarn install",
 
   // Configure tool-specific properties.
-    "customizations": {
+  "customizations": {
     "vscode": {
       "extensions": [
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "rvest.vs-code-prettier-eslint"
       ]
     }
   }
