@@ -2,9 +2,6 @@ import { useState, useEffect } from 'react'
 import { Button } from './components/Button'
 import './App.css'
 
-
-
-
 const App = () => {
 
   const [counters, setCount] = useState([0, 0, 0]);
