@@ -1,13 +1,14 @@
-import type { FC } from "react";
+import type React from "react";
+import { type FC } from "react";
 
-type ButtonProps = {
-    name: string;
-    onPress: () => void;
-}
+export type ButtonProps = React.ComponentPropsWithRef<"button">;
 
-export const Button: FC<ButtonProps> = ({ name, onPress }) => {
+export const buttonStyleClasses = "bg-pink-300/50 hover:shadow-neutral-50 shadow-md text-white rounded-lg p-1";
+
+export const Button: FC<ButtonProps> = (props) => {
+    const { className, ...propsWithoutClassName } = props;
+
     return (
-        <button onClick={onPress} className='bg-pink-300/50 hover:shadow-neutral-50 shadow-md text-white rounded-lg p-1'>{name}</button>
+        <button {...propsWithoutClassName} className={`${buttonStyleClasses} ${className}`} />
     )
-
 }
